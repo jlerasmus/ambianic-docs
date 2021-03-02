@@ -64,30 +64,6 @@
 </li>
                                     
 <li>
-    <a href="../faq/" class="dropdown-item">FAQ</a>
-</li>
-                                    
-<li>
-    <a href="../webui/" class="dropdown-item">Web UI</a>
-</li>
-                                    
-<li>
-    <a href="../mobileui/" class="dropdown-item">Mobile UI</a>
-</li>
-                                    
-<li>
-    <a href="../ai-apps/" class="dropdown-item">AI Apps</a>
-</li>
-                                    
-<li>
-    <a href="../howto/" class="dropdown-item">How To</a>
-</li>
-                                    
-<li>
-    <a href="../support/" class="dropdown-item">Support</a>
-</li>
-                                    
-<li>
     <a href="../edge-pairing/" class="dropdown-item">Remote / Local connection</a>
 </li>
                                 </ul>
@@ -97,23 +73,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../developers/development-environment/" class="dropdown-item">Development Environment</a>
+</li>
+                                    
+<li>
     <a href="../../developers/architecture/" class="dropdown-item">Architecture</a>
-</li>
-                                    
-<li>
-    <a href="../../developers/api/" class="dropdown-item">APIs</a>
-</li>
-                                    
-<li>
-    <a href="../../developers/integration/" class="dropdown-item">Integrations</a>
-</li>
-                                    
-<li>
-    <a href="../../developers/writing-plugins-overview/" class="dropdown-item">Writing PLugins</a>
-</li>
-                                    
-<li>
-    <a href="../../developers/deployment/" class="dropdown-item">Deployment Scenarios</a>
 </li>
                                     
 <li>
@@ -158,18 +122,27 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#5-minute-quick-start">5 Minute Quick Start</a></li>
+            <li class="nav-item main"><a href="#quick-start-guide">Quick Start Guide</a></li>
+                <li class="nav-item">
+                    <a href="#recommended-install" class="nav-link">Recommended Install</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#alternative-install-via-docker" class="nav-link">Alternative install via Docker</a>
+                </li>
                 <li class="nav-item">
                     <a href="#ambanic-edge" class="nav-link">Ambanic Edge</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#ambanic-ui" class="nav-link">Ambanic UI</a>
+                    <a href="#ambianic-ui" class="nav-link">Ambianic UI</a>
                 </li>
                 <li class="nav-item">
                     <a href="#pairing-ambanic-ui-with-ambianic-edge" class="nav-link">Pairing Ambanic UI with Ambianic Edge</a>
                 </li>
                 <li class="nav-item">
                     <a href="#configuration" class="nav-link">Configuration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#development" class="nav-link">Development</a>
                 </li>
                 <li class="nav-item">
                     <a href="#troubleshooting" class="nav-link">Troubleshooting</a>
@@ -182,10 +155,18 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="5-minute-quick-start">5 Minute Quick Start</h1>
-<p>Ambianic's goal is to provide helpful and actionable suggestions
-in the context of home and business automation.</p>
-<p>Ambianic has two major components: Ambianic UI and Ambianic Edge.</p>
+<h1 id="quick-start-guide">Quick Start Guide</h1>
+<p>Ambianic is an <a href="https://blog.ambianic.ai/2020/11/05/awards.html">award winning</a> ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.</p>
+<h2 id="recommended-install">Recommended Install</h2>
+<p>The simplest way to get started is to follow these steps:</p>
+<ul>
+<li><a href="https://github.com/ambianic/ambianic-box">Assemble an Ambianic Box</a></li>
+<li><a href="https://github.com/ambianic/ambianic-rpi-image">Flash on SD Card the Ambianic OS Image</a></li>
+<li><a href="#ambianic-ui">Connect to the box via Ambianic UI</a>.</li>
+</ul>
+<p>If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.</p>
+<h2 id="alternative-install-via-docker">Alternative install via Docker</h2>
+<p>Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).</p>
 <p>Ambianic UI is pre-deployed and readily available at <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a>. If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.</p>
 <h2 id="ambanic-edge">Ambanic Edge</h2>
 <p>Ambianic Edge is
@@ -199,12 +180,22 @@ on most modern machines and operating systems.</p>
 <a href="https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/">Docker</a>
 and <a href="https://docs.docker.com/compose/">Docker Compose</a> on it. 
 You can install and run the image in the default pi user space on Raspbian.</p>
-<p>Feel free to use <a href="https://gist.github.com/muka/725e07f26b8ac5f3e4f03bce5f2e8b45">this shell script</a> provided by Luca Capra that installs Docker and Docker Compose on a Raspberry Pi system (or another Debian flavored Linux) and runs a minimal Ambianic Edge configuration.</p>
-<h3 id="starting-ambianic-edge">Starting Ambianic Edge</h3>
-<p>Here is a default <a href="https://gist.github.com/ivelin/3891a7b5d61a12d6a1b9f652b6d53dce">docker-compose.yaml</a> file that you can start with. 
-It takes care of monitoring the health of Ambianic Edge, restarting when necessary and also graceful automatic updates to the latest release within 5 minutes.</p>
-<p><em>Note: The very first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings.</em></p>
-<h2 id="ambanic-ui">Ambanic UI</h2>
+<h3 id="installer-for-raspberry-os-and-debian-like-linux">Installer for Raspberry OS and Debian-like linux</h3>
+<p>We have a commodity script that will take care of installing and setting up your system. Run this line to setup </p>
+<pre><code class="language-sh">wget -qO - https://raw.githubusercontent.com/ambianic/ambianic-quickstart/master/installer.sh | sh
+</code></pre>
+<p>After the setup you can find the installation under <code>/opt/ambianic</code> where you can find the configuration files and the data directory (under <code>/opt/ambianic/data</code>).</p>
+<p>Ambianic Pipeline configuration will be under <code>/etc/ambianic</code>.</p>
+<h3 id="the-ambianic-edge-cli">The Ambianic Edge CLI</h3>
+<p>The installer will start the service for you. To manage the runtime you can use the <code>ambianic</code> command line. A few examples:</p>
+<ul>
+<li>Start, Stop or Restart with <code>ambianic [ start | stop | restart ]</code></li>
+<li>View the instance status with <code>ambianic status</code></li>
+<li>View logs with <code>ambianic logs</code></li>
+<li>Open the UI (if you system has a GUI) with <code>ambianic ui</code></li>
+<li>Upgrade the installation with <code>ambianic upgrade</code></li>
+</ul>
+<h2 id="ambianic-ui">Ambianic UI</h2>
 <p><a href="https://ui.ambianic.ai/">Ambianic UI</a> is a
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
 to an Ambianic Edge device.</p>
@@ -220,12 +211,16 @@ timeline screenshot.</p>
 <p><img alt="Pairing" src="../../assets/images/pairing-screen.png" /></p>
 <p>After a few moments, pairing will conclude and you will see the unique identifier of your Ambianic Edge device.</p>
 <p><img alt="Connected" src="../../assets/images/connected-screen.png" /></p>
+<p>If you used the recommended install via Ambianic Box, you can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect people and over 20 kinds of objects. Detections will show in your timeline.</p>
 <p>Congratulations! Your Ambianic instance is now up and running!</p>
+<p>When you are ready to explore more advanced capabilities, continue to the next section.</p>
 <h2 id="configuration">Configuration</h2>
 <p>You are now ready to configure Ambianic: pipelines, input sources and AI models.</p>
 <p>Read on: <a href="../configure/">Configuring Ambianic Edge</a>.</p>
 <p>Once you configure Ambianic Edge and restart the docker image, you should be able to see timeline view like the one above.</p>
 <p>The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.</p>
+<h2 id="development">Development</h2>
+<p>If you want to contribute to the code read how to <a href="../../developers/development-environment/">setup a development environment</a></p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>If you experience problems with your initial setup and you can't find a good solution online, feel free to engage the team on <a href="https://twitter.com/ambianicai">Twitter</a> or <a href="https://github.com/ambianic">open a github issue</a>.</p>
 <h2 id="supporting-the-project">Supporting the project</h2>
@@ -236,7 +231,7 @@ timeline screenshot.</p>
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-07-05 03:16:29.229972+00:00</p>
+            <p>Last update : 2021-03-02 06:16:34.982336+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

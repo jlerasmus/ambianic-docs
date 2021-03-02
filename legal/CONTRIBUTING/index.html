@@ -64,30 +64,6 @@
 </li>
                                     
 <li>
-    <a href="../../users/faq/" class="dropdown-item">FAQ</a>
-</li>
-                                    
-<li>
-    <a href="../../users/webui/" class="dropdown-item">Web UI</a>
-</li>
-                                    
-<li>
-    <a href="../../users/mobileui/" class="dropdown-item">Mobile UI</a>
-</li>
-                                    
-<li>
-    <a href="../../users/ai-apps/" class="dropdown-item">AI Apps</a>
-</li>
-                                    
-<li>
-    <a href="../../users/howto/" class="dropdown-item">How To</a>
-</li>
-                                    
-<li>
-    <a href="../../users/support/" class="dropdown-item">Support</a>
-</li>
-                                    
-<li>
     <a href="../../users/edge-pairing/" class="dropdown-item">Remote / Local connection</a>
 </li>
                                 </ul>
@@ -97,23 +73,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../developers/development-environment/" class="dropdown-item">Development Environment</a>
+</li>
+                                    
+<li>
     <a href="../../developers/architecture/" class="dropdown-item">Architecture</a>
-</li>
-                                    
-<li>
-    <a href="../../developers/api/" class="dropdown-item">APIs</a>
-</li>
-                                    
-<li>
-    <a href="../../developers/integration/" class="dropdown-item">Integrations</a>
-</li>
-                                    
-<li>
-    <a href="../../developers/writing-plugins-overview/" class="dropdown-item">Writing PLugins</a>
-</li>
-                                    
-<li>
-    <a href="../../developers/deployment/" class="dropdown-item">Deployment Scenarios</a>
 </li>
                                     
 <li>
@@ -130,7 +94,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../developers/deployment/" class="nav-link">
+                                <a rel="prev" href="../../developers/architecture/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -174,6 +138,9 @@
                 <li class="nav-item">
                     <a href="#community-guidelines" class="nav-link">Community Guidelines</a>
                 </li>
+                <li class="nav-item">
+                    <a href="#setup-your-development-environment" class="nav-link">Setup Your Development Environment</a>
+                </li>
         </ul>
     </div>
 </div></div>
@@ -208,30 +175,34 @@ part of the project. </p>
     and may be redistributed consistent with this project or the open
     source license(s) involved.
 </code></pre>
-
 <p>You generally only need to submit a CLA once, so if you've already submitted one
 (even if it was for a different project), you probably don't need to do it
 again.</p>
 <h2 id="attribution">Attribution</h2>
 <p>The text of this license is available under the Creative Commons Attribution-ShareAlike 3.0 Unported License. It is based on the Home Assistant CLA, which was in turn derived from the Linux Developer Certificate Of Origin, but modified to explicitly use the Apache 2.0 license and not mention sign-off.</p>
 <h2 id="code-reviews">Code reviews</h2>
-<p>All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-<a href="https://help.github.com/articles/about-pull-requests/">GitHub Help</a> for more
-information on using pull requests.</p>
+<p>All submissions, including submissions by project members, require review. We use GitHub pull requests for this purpose. Please follow these best practices:</p>
+<ul>
+<li>To expedite the review process, please <a href="https://www.netlify.com/blog/2020/03/31/how-to-scope-down-prs/">keep PRs scoped down</a></li>
+<li><a href="https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue">Link PRs to specific issues</a> they intend to resolve.</li>
+<li>Make sure that your PR improves <a href="https://en.wikipedia.org/wiki/Code_coverage#:~:text=In%20computer%20science%2C%20test%20coverage,a%20particular%20test%20suite%20runs.">code coverage</a> in a meaningful way. PRs that decrease code coverage will not be allowed.</li>
+<li>Consult <a href="https://help.github.com/articles/about-pull-requests/">GitHub Help</a> for more information on using pull requests. </li>
+</ul>
 <h2 id="semantic-releases">Semantic Releases</h2>
 <p>Ambianic.ai adheres to the <a href="https://semantic-release.gitbook.io/semantic-release/">Semantic Release conventions</a>.
 All package releases (to npm, pypi, docker) are completely automated in the Continuous Integration and Deployment scripts, which trigger on every Pull Request and commit to a project <code>master</code> branch.</p>
 <h2 id="community-guidelines">Community Guidelines</h2>
 <p>This project follows <a href="https://opensource.google.com/conduct/">Google's Open Source Community
-Guidelines</a>.</p></div>
+Guidelines</a>.</p>
+<h2 id="setup-your-development-environment">Setup Your Development Environment</h2>
+<p>Now that you are familiar with the contribution guidelines, you are ready to start coding. Follow <a href="../../developers/development-environment/">this guide to set up your dev environment</a>.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-07-05 03:16:29.202176+00:00</p>
+            <p>Last update : 2021-03-02 06:16:34.958108+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
